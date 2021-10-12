@@ -4,6 +4,9 @@ install: # команда полезна при первом клонирова�
 brain-games:
 	node bin/brain-games.js
 
+brain-even:
+	node bin/brain-even.js
+
 publish:
 	npm publish --dry-run
 
