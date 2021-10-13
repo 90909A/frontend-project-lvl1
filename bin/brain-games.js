@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import { questionName } from '../src/cli.js';
+import { defaultStart } from '../src/index.js';
 
-console.log('Welcome to the Brain Games!');
-
-questionName();
+defaultStart();
