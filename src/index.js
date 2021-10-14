@@ -15,12 +15,11 @@ const printQuestionGetAnswer = (question) => {
 };
 
 const isUserAnswerCorrect = (userAnswer, correctAnswer, userName) => {
-	if (toString(userAnswer) === toString(correctAnswer)) {
+	if (`${userAnswer}` === `${correctAnswer}`) {
 		console.log("Correct!");
 		return true;
 	} else {
-		console.log(
-			`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
+		console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
 			return false;
 	}
 };

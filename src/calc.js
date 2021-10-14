@@ -8,6 +8,7 @@ from '../src/index.js'
 
 const brainCalc = () => {
     let userName = startGameAndGetName();
+    console.log('What is the result of the expression?');
     for (let correctAnswerCounter = 0; correctAnswerCounter < 3; correctAnswerCounter += 1) {
         let randomMathExample = makeRandomMathExampleString();
         let arrayMathExampleArrayString = convertMathExampleToArrayString(randomMathExample);

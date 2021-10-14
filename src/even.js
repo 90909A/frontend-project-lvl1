@@ -9,6 +9,7 @@ from '../src/index.js'
 
 const brainEven = () => {
     let userName = startGameAndGetName();
+    console.log('Answer "yes" if the number is even, otherwise answer "no".');
     for (let correctAnswerCounter = 0; correctAnswerCounter < 3; correctAnswerCounter += 1) {
         let randomNumber = getRandomInRange(1, 100);
         let correctAnswer = getCorrectAnswer(randomNumber);
