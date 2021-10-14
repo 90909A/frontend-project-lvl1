@@ -1,6 +1,6 @@
 
 import { 
-    startGameGetName,
+    startGameAndGetName,
 	printQuestionGetAnswer,
 	isUserAnswerCorrect,
     finishGame
@@ -8,13 +8,13 @@ import {
 from '../src/index.js'
 
 const brainEven = () => {
-    let userName = startGameGetName();
+    let userName = startGameAndGetName();
     for (let correctAnswerCounter = 0; correctAnswerCounter < 3; correctAnswerCounter += 1) {
         let randomNumber = getRandomInRange(1, 100);
         let correctAnswer = getCorrectAnswer(randomNumber);
         let userAnswer = printQuestionGetAnswer(randomNumber);
-        let userAnwerCorrectly = isUserAnswerCorrect(userAnswer, correctAnswer, userName);
-        if (userAnwerCorrectly === false) {
+        let userAnswerCorrectly = isUserAnswerCorrect(userAnswer, correctAnswer, userName);
+        if (userAnswerCorrectly === false) {
             correctAnswerCounter = 0;
         }
     }

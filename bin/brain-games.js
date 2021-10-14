@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { defaultStart } from '../src/index.js';
+import { startGameAndGetName } from '../src/index.js';
 
-defaultStart();
+startGameAndGetName();

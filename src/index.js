@@ -1,6 +1,6 @@
 import readlineSync from "readline-sync";
 
-const startGameGetName = () => {
+const startGameAndGetName = () => {
 	console.log("Welcome to the Brain Games!");
 	let userName = readlineSync.question("May I have your name? ");
 	console.log("Hello, " + userName + "!");
@@ -15,7 +15,7 @@ const printQuestionGetAnswer = (question) => {
 };
 
 const isUserAnswerCorrect = (userAnswer, correctAnswer, userName) => {
-	if (userAnswer === correctAnswer) {
+	if (toString(userAnswer) === toString(correctAnswer)) {
 		console.log("Correct!");
 		return true;
 	} else {
@@ -30,7 +30,7 @@ const finishGame = (userName) => {
 }
 
 export {
-	startGameGetName,
+	startGameAndGetName,
 	printQuestionGetAnswer,
 	isUserAnswerCorrect,
 	finishGame

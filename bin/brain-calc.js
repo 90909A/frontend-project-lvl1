@@ -1,5 +1,3 @@
-import { questionName } from "../src/index.js";
+import { brainCalc } from "../src/calc.js";
 
-console.log("Welcome to the Brain Games!");
-
-questionName();
+brainCalc();
