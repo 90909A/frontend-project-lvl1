@@ -17,10 +17,12 @@ const brainCalc = () => {
         let userAnswer = printQuestionGetAnswer(randomMathExample);
         let userAnswerCorrectly = isUserAnswerCorrect(userAnswer, correctAnswer, userName);
         if (userAnswerCorrectly === false) {
-            correctAnswerCounter = -1;
+            break;
+        }
+        if (correctAnswerCounter === 2) {
+            finishGame(userName);
         }
     }
-    finishGame(userName);
 };
 
 

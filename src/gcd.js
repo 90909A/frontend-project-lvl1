@@ -17,11 +17,14 @@ const brainGcd = () => {
         let userAnswer = printQuestionGetAnswer(`${firstNumber} ${secondNumber}`);
         let userAnswerCorrectly = isUserAnswerCorrect(userAnswer, correctAnswer, userName);
         if (userAnswerCorrectly === false) {
-            correctAnswerCounter = -1;
+            if (userAnswerCorrectly === false) {
+                break;
+            }
+            if (correctAnswerCounter === 2) {
+                finishGame(userName);
+            }
         }
-    }
-    finishGame(userName);
-};
+    };
 
 const getRandomInRange = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
