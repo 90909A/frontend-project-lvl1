@@ -1,54 +1,51 @@
-import { 
-    startGameAndGetName,
-	printQuestionGetAnswer,
-	isUserAnswerCorrect,
-    finishGame
-    }
-from '../src/index.js'
-
-const brainProgression = () => {
-    let userName = startGameAndGetName();
-    console.log('What number is missing in the progression?');
-    for (let correctAnswerCounter = 0; correctAnswerCounter < 3; correctAnswerCounter += 1) {
-        let firstNumber = getRandomInRange(1, 20);
-        let arrayLength = getRandomInRange(5, 10);
-        let progressionOfNumbers = getRandomInRange(2, 5);
-        let hiddenNumber = getRandomInRange(0, arrayLength - 1);
-        let correctAnswer = getCorrectAnswer(hiddenNumber, progressionOfNumbers, firstNumber);
-        let userAnswer = printQuestionGetAnswer(getRandomArray(firstNumber, arrayLength, progressionOfNumbers, hiddenNumber));
-        let userAnswerCorrectly = isUserAnswerCorrect(userAnswer, correctAnswer, userName);
-        if (userAnswerCorrectly === false) {
-            break;
-        }
-        if (correctAnswerCounter === 2) {
-            finishGame(userName);
-        }
-    }
-};
-
-const getRandomInRange = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+import {
+  startGameAndGetName,
+  getRandomInRange,
+  printQuestionGetAnswer,
+  isUserAnswerCorrect,
+  finishGame,
+}
+  from './index.js';
 
 const getRandomArray = (firstNumber, arrayLength, progressionOfNumbers, hiddenNumber) => {
-    let randomArray = [];
+  const randomArray = [];
 
-    for (let i = 0; randomArray.length < arrayLength; i += progressionOfNumbers) {
-        if (randomArray.length === hiddenNumber) {
-            randomArray.push('..');
-        } else {
-            randomArray.push(firstNumber + i);
-        }
+  for (let i = 0; randomArray.length < arrayLength; i += progressionOfNumbers) {
+    if (randomArray.length === hiddenNumber) {
+      randomArray.push('..');
+    } else {
+      randomArray.push(firstNumber + i);
     }
-    return randomArray.join(' ');
+  }
+  return randomArray.join(' ');
 };
 
 const getCorrectAnswer = (hiddenNumber, progressionOfNumbers, firstNumber) => {
-    if (hiddenNumber === 0) {
-        return firstNumber;
-    } else {
-        return firstNumber + progressionOfNumbers * hiddenNumber;
-    }
+  if (hiddenNumber === 0) {
+    return firstNumber;
+  }
+  return firstNumber + progressionOfNumbers * hiddenNumber;
 };
 
-export { brainProgression };
+const brainProgression = () => {
+  const userName = startGameAndGetName();
+  console.log('What number is missing in the progression?');
+  for (let correctAnswerCounter = 0; correctAnswerCounter < 3; correctAnswerCounter += 1) {
+    const firstNumber = getRandomInRange(1, 20);
+    const arrayLength = getRandomInRange(5, 10);
+    const progressionOfNumbers = getRandomInRange(2, 5);
+    const hiddenNumber = getRandomInRange(0, arrayLength - 1);
+    const correctAnswer = getCorrectAnswer(hiddenNumber, progressionOfNumbers, firstNumber);
+    const randomArr = getRandomArray(firstNumber, arrayLength, progressionOfNumbers, hiddenNumber);
+    const userAnswer = printQuestionGetAnswer(randomArr);
+    const userAnswerCorrectly = isUserAnswerCorrect(userAnswer, correctAnswer, userName);
+    if (userAnswerCorrectly === false) {
+      break;
+    }
+    if (correctAnswerCounter === 2) {
+      finishGame(userName);
+    }
+  }
+};
+
+export default brainProgression;
