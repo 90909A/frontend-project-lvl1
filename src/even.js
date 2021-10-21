@@ -16,7 +16,7 @@ const brainEven = () => {
         let userAnswer = printQuestionGetAnswer(randomNumber);
         let userAnswerCorrectly = isUserAnswerCorrect(userAnswer, correctAnswer, userName);
         if (userAnswerCorrectly === false) {
-            correctAnswerCounter = 0;
+            correctAnswerCounter = -1;
         }
     }
     finishGame(userName);
@@ -29,9 +29,8 @@ const getRandomInRange = (min, max) => {
 const getCorrectAnswer = (randomNumber) => {
     if (randomNumber % 2 === 0) {
 		return "yes";
-	} else {
-		return "no";
-	}
+	} 
+	return "no";
 };
 
 

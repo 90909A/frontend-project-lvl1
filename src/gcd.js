@@ -17,7 +17,7 @@ const brainGcd = () => {
         let userAnswer = printQuestionGetAnswer(`${firstNumber} ${secondNumber}`);
         let userAnswerCorrectly = isUserAnswerCorrect(userAnswer, correctAnswer, userName);
         if (userAnswerCorrectly === false) {
-            correctAnswerCounter = 0;
+            correctAnswerCounter = -1;
         }
     }
     finishGame(userName);

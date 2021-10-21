@@ -18,7 +18,7 @@ const brainProgression = () => {
         let userAnswer = printQuestionGetAnswer(getRandomArray(firstNumber, arrayLength, progressionOfNumbers, hiddenNumber));
         let userAnswerCorrectly = isUserAnswerCorrect(userAnswer, correctAnswer, userName);
         if (userAnswerCorrectly === false) {
-            correctAnswerCounter = 0;
+            correctAnswerCounter = -1;
         }
     }
     finishGame(userName);

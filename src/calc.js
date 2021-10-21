@@ -17,7 +17,7 @@ const brainCalc = () => {
         let userAnswer = printQuestionGetAnswer(randomMathExample);
         let userAnswerCorrectly = isUserAnswerCorrect(userAnswer, correctAnswer, userName);
         if (userAnswerCorrectly === false) {
-            correctAnswerCounter = 0;
+            correctAnswerCounter = -1;
         }
     }
     finishGame(userName);
