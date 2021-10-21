@@ -16,7 +16,6 @@ const brainGcd = () => {
         let correctAnswer = calculateCorrectGcd(initialNumber, firstNumber, secondNumber);
         let userAnswer = printQuestionGetAnswer(`${firstNumber} ${secondNumber}`);
         let userAnswerCorrectly = isUserAnswerCorrect(userAnswer, correctAnswer, userName);
-        if (userAnswerCorrectly === false) {
             if (userAnswerCorrectly === false) {
                 break;
             }
@@ -24,7 +23,7 @@ const brainGcd = () => {
                 finishGame(userName);
             }
         }
-    }
+
 };
 
 const getRandomInRange = (min, max) => {
