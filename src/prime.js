@@ -8,6 +8,7 @@ import {
   from './index.js';
 
 const getCorrectAnswer = (randomNumber) => {
+  // [A] проверку вынести в отдельный метод и объяснить
   if (randomNumber === 2 || randomNumber === 3 || randomNumber === 5 || randomNumber === 7) {
     return 'yes';
   }

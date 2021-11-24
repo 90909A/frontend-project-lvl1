@@ -9,7 +9,8 @@ const startGameAndGetName = () => {
 
 const getRandomInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-const printQuestionGetAnswer = (question) => {
+// [A] printQuestionAndGetAnswer
+const printQuestionGetAnswer = (question) => { 
   console.log(`Question: ${question}`);
   const userAnswer = readlineSync.question('Your answer: ');
   return userAnswer;

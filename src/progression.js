@@ -11,12 +11,14 @@ const getRandomArray = (firstNumber, arrayLength, progressionOfNumbers, hiddenNu
   const randomArray = [];
 
   for (let i = 0; randomArray.length < arrayLength; i += progressionOfNumbers) {
+    // [A] почему эта провека в цикле?
     if (randomArray.length === hiddenNumber) {
       randomArray.push('..');
     } else {
       randomArray.push(firstNumber + i);
     }
   }
+  // [A] почему функция называется getRandomArray, а возвращается строка? Может стоит назвать getRandomProgression?
   return randomArray.join(' ');
 };
 
@@ -31,6 +33,7 @@ const brainProgression = () => {
   const userName = startGameAndGetName();
   console.log('What number is missing in the progression?');
   for (let correctAnswerCounter = 0; correctAnswerCounter < 3; correctAnswerCounter += 1) {
+    // [A] объяснить
     const firstNumber = getRandomInRange(1, 20);
     const arrayLength = getRandomInRange(5, 10);
     const progressionOfNumbers = getRandomInRange(2, 5);

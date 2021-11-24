@@ -21,6 +21,7 @@ const brainGcd = () => {
   const userName = startGameAndGetName();
   console.log('Find the greatest common divisor of given numbers.');
   for (let correctAnswerCounter = 0; correctAnswerCounter < 3; correctAnswerCounter += 1) {
+    // [A] объяснить как работает
     const initialNumber = getRandomInRange(2, 10);
     const firstNumber = initialNumber * getRandomInRange(1, 10);
     const secondNumber = initialNumber * getRandomInRange(1, 10);
